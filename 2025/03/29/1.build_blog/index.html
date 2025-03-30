@@ -23,13 +23,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-theme-melody</span><br><span class="line">$ npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
 
 <h3 id="Configure-Hero-and-theme"><a href="#Configure-Hero-and-theme" class="headerlink" title="Configure Hero and theme"></a>Configure Hero and theme</h3><p>Edit the <strong>_config.yml</strong> file in the root directory of your project:</p>
-<ol>
+<ul>
 <li>Update site details:</li>
-</ol>
+</ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">url: https://username.github.io</span><br><span class="line"></span><br><span class="line">theme: melody</span><br><span class="line"></span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:username/username.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ul>
 <li>For Hexo v5+, copy the default Melody configuration:<br>Create <strong>_config.melody.yml</strong> in your root directory.<br>Copy contents from node_modules&#x2F;hexo-theme-melody&#x2F;_config.yml into _config.melody.yml.</li>
-</ol>
+</ul>
 <h3 id="Install-Hexo-Git-deployer"><a href="#Install-Hexo-Git-deployer" class="headerlink" title="Install Hexo Git deployer"></a>Install Hexo Git deployer</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <h3 id="Verify-in-Local"><a href="#Verify-in-Local" class="headerlink" title="Verify in Local"></a>Verify in Local</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
