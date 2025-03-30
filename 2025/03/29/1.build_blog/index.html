@@ -34,15 +34,15 @@
 
 <h3 id="Verify-in-Local"><a href="#Verify-in-Local" class="headerlink" title="Verify in Local"></a>Verify in Local</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<h3 id="Deploy-your-blog"><a href="#Deploy-your-blog" class="headerlink" title="Deploy your blog"></a>Deploy your blog</h3><ol>
+<h3 id="Deploy-your-blog"><a href="#Deploy-your-blog" class="headerlink" title="Deploy your blog"></a>Deploy your blog</h3><ul>
 <li>Go to your blog repo in github UI -&gt; Settings -&gt; Pages -&gt; Source build choose <strong>Deploy from a branch</strong> -&gt; Branch choose <strong>main &#x2F;root save</strong></li>
 <li>Go to your terminal, under blog repo:</li>
-</ol>
+</ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<ol start="3">
+<ul>
 <li>Check github action(on the right bar of repo) if ready</li>
 <li>Your blog should now be live at <strong><a target="_blank" rel="noopener" href="https://username.github.io/">https://username.github.io</a></strong></li>
-</ol>
+</ul>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-new-blog"><a href="#Create-new-blog" class="headerlink" title="Create new blog"></a>Create new blog</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new Post</span><br></pre></td></tr></table></figure>
 
 <h2 id="Solution2-Seperate-source-code-and-deployment"><a href="#Solution2-Seperate-source-code-and-deployment" class="headerlink" title="Solution2: Seperate source code and deployment"></a>Solution2: Seperate source code and deployment</h2><p>In order to upload all source code to github, so need to seperate source code &amp; deployment branch. Hexo source code and deployment is seperated.</p>
@@ -53,11 +53,11 @@
 
 <h3 id="Step4-Configure-sub-branch-for-deployment"><a href="#Step4-Configure-sub-branch-for-deployment" class="headerlink" title="Step4 Configure sub-branch for deployment"></a>Step4 Configure sub-branch for deployment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout --orphan gh-pages</span><br><span class="line">$ git <span class="built_in">rm</span> -rf .</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">&quot;Hello GitHub Pages&quot;</span> &gt; index.html</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">&quot;Init gh-pages&quot;</span></span><br><span class="line">$ git push origin gh-pages</span><br></pre></td></tr></table></figure>
 
-<h3 id="Step5-Commit-code-and-deployment"><a href="#Step5-Commit-code-and-deployment" class="headerlink" title="Step5 Commit code and deployment"></a>Step5 Commit code and deployment</h3><ul>
+<h3 id="Step5-Commit-code-and-deployment"><a href="#Step5-Commit-code-and-deployment" class="headerlink" title="Step5 Commit code and deployment"></a>Step5 Commit code and deployment</h3><ol>
 <li>Go to repo -&gt; Settings -&gt; Pages -&gt; set branch to gh-pages &amp; &#x2F;root </li>
 <li>Can commit code in source branch</li>
 <li>Can deploy blog in gh pages triggered by Github Action</li>
-</ul>
+</ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yurihe.github.io/2025/03/29/1.build_blog/">https://yurihe.github.io/2025/03/29/1.build_blog/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/git/">git</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2025/03/29/post2/"><i class="fa fa-chevron-left">  </i><span>post2</span></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/images/top_img1.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2025 By Yu</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/lib/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.1"></script><script src="/js/fancybox.js?version=1.9.1"></script><script src="/js/sidebar.js?version=1.9.1"></script><script src="/js/copy.js?version=1.9.1"></script><script src="/js/fireworks.js?version=1.9.1"></script><script src="/js/transition.js?version=1.9.1"></script><script src="/js/scroll.js?version=1.9.1"></script><script src="/js/head.js?version=1.9.1"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
