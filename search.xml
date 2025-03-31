@@ -4,20 +4,32 @@
   
     
     <entry>
-      <title>post2</title>
-      <link href="/2025/03/29/post2/"/>
-      <url>/2025/03/29/post2/</url>
+      <title>Anti-virus software expired, what happen</title>
+      <link href="/2025/03/29/2.cyber_blog/"/>
+      <url>/2025/03/29/2.cyber_blog/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p>Linux machine running apache server and is accessible from PC in same LAN. But antivirus software expired. Any security issues are concerned for linux machine?<br>If anti-virus software expired, which means our linux machine is explore in unsecure situation. </p><h2 id="Possible-security-issues"><a href="#Possible-security-issues" class="headerlink" title="Possible security issues"></a>Possible security issues</h2><ul><li>Apache server is mainly web apache server. If users uplaod malicious files from UI, malicious file will store in apache server since undetected.<br>The file maybe include automated-execute script which will automatically install malware such as Trojans, which will remote access your linux machine and steal your data.</li><li>Attacker exploit known apache software vulnerability. Since antivirus software is outdated, so antivirus signature didn’t update and cannot detect new format of virus.</li><li></li></ul><h2 id="Security-Risk"><a href="#Security-Risk" class="headerlink" title="Security Risk"></a>Security Risk</h2><h3 id="Malware-infection"><a href="#Malware-infection" class="headerlink" title="Malware infection"></a>Malware infection</h3><p>Attackers could exploit unpatched vulnerabilities in Apache or the OS to deliver ransomware, spyware, or bots.</p><h3 id="Data-Theft"><a href="#Data-Theft" class="headerlink" title="Data Theft"></a>Data Theft</h3><p>Sensitive files on the server or connected clients could be stolen if malware breaches the system.</p><h3 id="Server-Compromise"><a href="#Server-Compromise" class="headerlink" title="Server Compromise"></a>Server Compromise</h3><p>Hackers may hijack the Apache server to host phishing sites or distribute malware to clients.</p><h3 id="Client-Infection"><a href="#Client-Infection" class="headerlink" title="Client Infection"></a>Client Infection</h3><p>Infected server could spread malware to connected PCs (e.g., via shared files or exploits).</p><h2 id="Operational-Risk"><a href="#Operational-Risk" class="headerlink" title="Operational Risk"></a>Operational Risk</h2><h3 id="Apache-performance-issue"><a href="#Apache-performance-issue" class="headerlink" title="Apache performance issue"></a>Apache performance issue</h3><p>Malware might consume resources, slowing down the server or causing crashes.</p><h3 id="False-Positives"><a href="#False-Positives" class="headerlink" title="False Positives"></a>False Positives</h3><p>If expired AV still runs partially, it could misidentify Apache&#x2F;modules as threats, blocking legitimate traffic.</p><h3 id="Compliance-Violations"><a href="#Compliance-Violations" class="headerlink" title="Compliance Violations"></a>Compliance Violations</h3><p>Lack of active AV may break security policies (e.g., HIPAA, GDPR for sensitive data).</p><h2 id="Mitigation-Steps"><a href="#Mitigation-Steps" class="headerlink" title="Mitigation Steps"></a>Mitigation Steps</h2><ol><li>Renew or replace Anti-Virus software</li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> security </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cybersecurity </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>Build Blog</title>
+      <title>Build Hexo Blog and deploy on Github</title>
       <link href="/2025/03/29/1.build_blog/"/>
       <url>/2025/03/29/1.build_blog/</url>
       
