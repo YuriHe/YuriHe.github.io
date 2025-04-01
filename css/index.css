@@ -1059,7 +1059,7 @@ footer.is-mobile {
   cursor: pointer;
 }
 #pagination .page-number.current {
-  background: #000;
+  background: #424d3c;
   color: #fff;
   cursor: default;
 }
@@ -1634,7 +1634,7 @@ a.fancybox:focus {
   transition: all 0.2s ease-in-out;
 }
 #sidebar .toggle-sidebar-info span:hover {
-  background: #000;
+  background: #424d3c;
 }
 #sidebar .author-info {
   margin-left: -0.25rem;
@@ -1715,10 +1715,10 @@ a.fancybox:focus {
   content: "";
 }
 #sidebar .author-info-articles .article-meta:hover {
-  background: #141414;
+  background: #505e49;
 }
 #sidebar .author-info-articles .article-meta:hover .pull-right {
-  color: #000;
+  color: #424d3c;
 }
 #sidebar .author-info-links__title {
   margin-bottom: 0.4rem;
@@ -1780,15 +1780,15 @@ a.fancybox:focus {
   transition: all 0.2s ease-in-out;
 }
 #sidebar .sidebar-toc .toc-link.active {
-  border-right-color: #000;
-  background: #000;
+  border-right-color: #353e30;
+  background: #424d3c;
   color: #fff;
 }
 #sidebar .sidebar-toc__progress {
   position: relative;
   margin-top: -0.3rem;
   padding-left: 0.6rem;
-  color: #000;
+  color: #424d3c;
 }
 #sidebar .sidebar-toc__progress .progress-notice {
   margin-right: 0.4rem;
@@ -1800,7 +1800,7 @@ a.fancybox:focus {
 #sidebar .sidebar-toc__progress-bar {
   width: 0;
   height: 1px;
-  background: #000;
+  background: #424d3c;
 }
 .search-dialog {
   position: fixed;
