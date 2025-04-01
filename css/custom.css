@@ -16,14 +16,14 @@ a#site-name {
   
   /* Animation properties */
   animation: 
-    typing 3.5s steps(40, end),
+    typing 2.5s steps(40, end),
     blink-caret 0.75s step-end infinite;
 }
 
 /* The typing animation */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 20% }
 }
 
 /* The cursor blink animation */
