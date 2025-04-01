@@ -4,16 +4,16 @@
 # ---------------
 theme_color:
   enable: true
-  main: "#000000"
+  main: "#424d3c"
   paginator: "#000000"
   button_hover: "#FF7242"
   text_selection: "#00C4B6"
   link_color: "#0e5e12"
-  hr_color: "#000000"
-  tag_start_color: "#000000"
+  hr_color: "#91a187"
+  tag_start_color: "#424d3c"
   tag_end_color: "#1a9639"
-  header_text_color: "#ffffff"
-  footer_text_color: "#ffffff"
+  header_text_color: "#424d3c"
+  footer_text_color: "#e9f0e1"
 
 # Main menu navigation
 menu:
