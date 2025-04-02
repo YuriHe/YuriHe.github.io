@@ -2,5 +2,6 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-banner_img:
+categories:
+toc_number: true
 ---
