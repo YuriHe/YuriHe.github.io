@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Introduction of Network Infrastructure</title>
+      <title>Introduction - Network Infrastructure</title>
       <link href="/2025/04/03/7.osi/"/>
       <url>/2025/04/03/7.osi/</url>
       
-        <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Introduce 7layer OSI model</p><span id="more"></span><img src="/2025/04/03/7.osi/osi.png" class="" title="OSI"><p>Layer7: Application layer<br>1.FTP: based on TCP. controlplane work on port 21, dataplane work on port 20. Controlplane setup connection; dataplane have two modes: active mode and passive mode. If the server initializes the 3-way handshake, it is active mode; if the client initializes 3-way handshake, it is passive mode. FTP won’t encrypt data, if you send sensitive data you should choose SFTP, port 22 which is an SSH port as well.<br>2.SSH: securely remote access, port 22, SFTP built on top of SSH. use key pair&#x2F;password to access,<br>3.HTTP, port80; HTTPS port 443, both based on TCP.<br>4.Telnet based on TCP, port 23, remote access and transmit data in plaintext via cli.<br>5.DNS based on UDP, port 65.<br>6.DHCP based on UDP, server port 67, client 68 port. </p><p>Layer6: Presentation layer: data translate(ASCII code), data compression<br>Layer5: Session layer: establish session between two devices</p><p>Layer4: Transport layer: segment transfer between port to port(process to process)<br>TCP: reliable data transmission, 3-way handshake &amp; 4-way handshake<br>It is a byte stream, each time data transfer have seq# and ack# to make sure data transfer is in order. TCP has accumulated acknowledgement, reliable connection, re-transmission, and congestion control.<br>UDP: unreliable data transfer, but fast.</p><p>Layer3: Network layer: route data between hosts across different networks<br>1.IP: used to define IP datagram(IP fragment MF&#x3D;1, if DF&#x3D;1 cannot fragment), packet size &gt; MTU, ICMP error message. path of MTU discovery(ICMP+IP DFflag set)<br>2.NAT: SNAT: many to one allows multiple devices behind NAT devices in private networks to share the same public IP and access the internet. DNAT: reverse of SNAT, one to many<br>3.IPsec<br>4.RIP<br>5.OSPF<br>6.ICMP (ping)</p><p>Layer2: Link layer<br>1.Ethernet: transfer.forward frame<br>2.APR helps LAN devices to communicate. mapings IP address to MAC address. (ARP cache, ARP request, ARP reply, update device’s MAC address)<br>3.STP(Spanning tree protocol): prevent loop </p><p>Layer1: Physical layer</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Introduce 7layer OSI model</p><span id="more"></span><img src="/2025/04/03/7.osi/osi.png" class="" title="OSI"><h1 id="Layer7-Application-layer"><a href="#Layer7-Application-layer" class="headerlink" title="Layer7: Application layer"></a>Layer7: Application layer</h1><ul><li>FTP<br>Port: 20&#x2F;21<br>use TCP<br>controlplane work on port 21, dataplane work on port 20. Controlplane setup connection; dataplane have two modes: active mode and passive mode. If the server initializes the 3-way handshake, it is active mode; if the client initializes 3-way handshake, it is passive mode. FTP won’t encrypt data, if you send sensitive data you should choose SFTP, port 22 which is an SSH port as well.</li><li>SSH<br>Port: 22<br>use TCP<br>securely remote access, SFTP built on top of SSH. use key pair&#x2F;password to access</li><li>HTTP&#x2F;HTTPS<br>Port: 80&#x2F;443<br>use TCP<br>web communication; HTTPS adds SSL&#x2F;TLS encryption</li><li>Telnet<br>Port: 23<br>use TCP<br>remote access and transmit data in plaintext via cli</li><li>DNS<br>Port: 53<br>use UDP&#x2F;TCP<br>UDP for queries, TCP for zone transfer</li><li>DHCP<br>Port: 67&#x2F;68<br>use UDP<br>Dynamic host configuration protocol<br>server use port 67, client use port 68.<br>dynamic IP assignment<br>client-server model</li></ul><h1 id="Layer6-Presentation-layer"><a href="#Layer6-Presentation-layer" class="headerlink" title="Layer6: Presentation layer"></a>Layer6: Presentation layer</h1><p>Data translation and formatting:<br>Character encoding (ASCII, Unicode)<br>Data compression<br>Encryption&#x2F;decryption (TLS&#x2F;SSL)<br>Media formatting (JPEG, MPEG)</p><h1 id="Layer5-Session-layer"><a href="#Layer5-Session-layer" class="headerlink" title="Layer5: Session layer"></a>Layer5: Session layer</h1><p>Manages communication sessions:<br>Establishment (SYN)<br>Maintenance (keepalives)<br>Termination (FIN&#x2F;RST)<br>Session recovery<br>Protocols: NetBIOS, RPC, PPTP</p><h1 id="Layer4-Transport-layer"><a href="#Layer4-Transport-layer" class="headerlink" title="Layer4: Transport layer"></a>Layer4: Transport layer</h1><p>segment transfer between port to port(process to process)</p><ul><li>TCP<br>reliable data transmission, 3-way handshake &amp; 4-way handshake<br>It is a byte stream, each time data transfer have seq# and ack# to make sure data transfer is in order. TCP has accumulated acknowledgement, reliable connection, re-transmission, and congestion control.</li><li>UDP<br>unreliable data transfer, but fast so used in DNS query, VoIP</li></ul><h1 id="Layer3-Network-layer"><a href="#Layer3-Network-layer" class="headerlink" title="Layer3: Network layer"></a>Layer3: Network layer</h1><p>route data between hosts across different networks</p><ul><li>IP<br>used to define IP datagram(IP fragment MF&#x3D;1, if DF&#x3D;1 cannot fragment), packet size &gt; MTU, ICMP error message. path of MTU discovery(ICMP+IP DFflag set)</li><li>NAT(SNAT,DNAT, PAT)<br>SNAT: many to one allows multiple devices behind NAT devices in private networks to share the same public IP and access the internet. DNAT: reverse of SNAT, one to many</li><li>ICMP<br>ping&#x2F;traceroute</li><li>routing<br>RIP (distance vector)<br>OSPF (link-state advertisement)<br>BGP (path vector)</li></ul><h1 id="Layer2-Link-layer"><a href="#Layer2-Link-layer" class="headerlink" title="Layer2: Link layer"></a>Layer2: Link layer</h1><p>forwarding frame in one LAN</p><ul><li>Ethernet<br>MAC addressing, CSMA&#x2F;CD, ethernet frame, frame format(EthernetII, 802.3)</li><li>ARP<br>IP&lt;-&gt; MAC mapping<br>ARP workflow: ARP cache, ARP request, ARP reply, update device’s MAC address</li><li>STP<br>prevent loop</li></ul><h1 id="Layer1-Physical-layer"><a href="#Layer1-Physical-layer" class="headerlink" title="Layer1: Physical layer"></a>Layer1: Physical layer</h1><p>Physical connectivity:</p><ul><li><p>Key Elements<br>Media types (Copper, Fiber, Wireless)<br>Signaling methods<br>Topologies (Star, Bus, Ring)<br>Hardware (Hubs, NICs, Repeaters)<br>Standards (802.3, 802.11)</p></li><li><p>Physical Layer Protocols<br>Ethernet (10&#x2F;100&#x2F;1000BASE-T)<br>DSL<br>SONET&#x2F;SDH<br>802.11 PHY layer</p></li></ul>]]></content>
       
       
       <categories>
@@ -29,7 +29,7 @@
     
     
     <entry>
-      <title>Introduction of OSPF</title>
+      <title>Introduction - OSPF</title>
       <link href="/2025/04/03/6.ospf/"/>
       <url>/2025/04/03/6.ospf/</url>
       
@@ -128,13 +128,13 @@
       
         <tags>
             
-            <tag> AWS </tag>
-            
-            <tag> IaC </tag>
-            
             <tag> automation </tag>
             
             <tag> pytest </tag>
+            
+            <tag> AWS </tag>
+            
+            <tag> IaC </tag>
             
         </tags>
       
