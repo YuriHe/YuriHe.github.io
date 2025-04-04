@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Introduction of Network Infrastructure</title>
+      <link href="/2025/04/03/7.osi/"/>
+      <url>/2025/04/03/7.osi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Introduce 7layer OSI model</p><span id="more"></span><img src="/2025/04/03/7.osi/osi.png" class="" title="OSI"><p>Layer7: Application layer<br>1.FTP: based on TCP. controlplane work on port 21, dataplane work on port 20. Controlplane setup connection; dataplane have two modes: active mode and passive mode. If the server initializes the 3-way handshake, it is active mode; if the client initializes 3-way handshake, it is passive mode. FTP won’t encrypt data, if you send sensitive data you should choose SFTP, port 22 which is an SSH port as well.<br>2.SSH: securely remote access, port 22, SFTP built on top of SSH. use key pair&#x2F;password to access,<br>3.HTTP, port80; HTTPS port 443, both based on TCP.<br>4.Telnet based on TCP, port 23, remote access and transmit data in plaintext via cli.<br>5.DNS based on UDP, port 65.<br>6.DHCP based on UDP, server port 67, client 68 port. </p><p>Layer6: Presentation layer: data translate(ASCII code), data compression<br>Layer5: Session layer: establish session between two devices</p><p>Layer4: Transport layer: segment transfer between port to port(process to process)<br>TCP: reliable data transmission, 3-way handshake &amp; 4-way handshake<br>It is a byte stream, each time data transfer have seq# and ack# to make sure data transfer is in order. TCP has accumulated acknowledgement, reliable connection, re-transmission, and congestion control.<br>UDP: unreliable data transfer, but fast.</p><p>Layer3: Network layer: route data between hosts across different networks<br>1.IP: used to define IP datagram(IP fragment MF&#x3D;1, if DF&#x3D;1 cannot fragment), packet size &gt; MTU, ICMP error message. path of MTU discovery(ICMP+IP DFflag set)<br>2.NAT: SNAT: many to one allows multiple devices behind NAT devices in private networks to share the same public IP and access the internet. DNAT: reverse of SNAT, one to many<br>3.IPsec<br>4.RIP<br>5.OSPF<br>6.ICMP (ping)</p><p>Layer2: Link layer<br>1.Ethernet: transfer.forward frame<br>2.APR helps LAN devices to communicate. mapings IP address to MAC address. (ARP cache, ARP request, ARP reply, update device’s MAC address)<br>3.STP(Spanning tree protocol): prevent loop </p><p>Layer1: Physical layer</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> netowrk </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Introduction of OSPF</title>
       <link href="/2025/04/03/6.ospf/"/>
       <url>/2025/04/03/6.ospf/</url>
@@ -103,13 +128,13 @@
       
         <tags>
             
-            <tag> automation </tag>
-            
-            <tag> pytest </tag>
-            
             <tag> AWS </tag>
             
             <tag> IaC </tag>
+            
+            <tag> automation </tag>
+            
+            <tag> pytest </tag>
             
         </tags>
       
