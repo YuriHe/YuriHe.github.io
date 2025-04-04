@@ -80,7 +80,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -93,6 +93,27 @@ include:
 exclude:
 ignore:
 
+inject:
+  head:
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  bottom:
+    - <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    - |
+      <script>
+        if (window.location.pathname !== '/' && document.getElementById('gitalk-container')) {
+          const gitalk = new Gitalk({
+            clientID: 'your_client_id',
+            clientSecret: 'your_client_secret',
+            repo: 'your_repo_name',
+            owner: 'your_github_username',
+            admin: ['your_github_username'],
+            id: window.location.pathname,  // Ensure unique per post
+            distractionFreeMode: false
+          });
+          gitalk.render('gitalk-container');
+        }
+      </script>
+      
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
