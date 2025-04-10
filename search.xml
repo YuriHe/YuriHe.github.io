@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Python3 regular Expression</title>
+      <link href="/2025/04/10/9.regex/"/>
+      <url>/2025/04/10/9.regex/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Common-Functions-in-re-Module"><a href="#Common-Functions-in-re-Module" class="headerlink" title="Common Functions in re Module"></a>Common Functions in <code>re</code> Module</h1><h2 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub()"></a>re.sub()</h2><ul><li>replace all matches of pattern with repl</li><li>re.sub(pattern, replace, string)</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line"></span><br><span class="line">def useSub():</span><br><span class="line">    # replace all number with $</span><br><span class="line">    s1 = re.sub(r&#x27;\d+&#x27;, &#x27;$&#x27;, &#x27;123 abc 123&#x27;)</span><br><span class="line">    print(s1) # output:$ abc $</span><br><span class="line">useSub()</span><br></pre></td></tr></table></figure><h2 id="re-match"><a href="#re-match" class="headerlink" title="re.match()"></a>re.match()</h2><ul><li>atches the pattern oonly at the beginning of string</li><li>re.match(pattern, string)</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def useMatch():</span><br><span class="line">    m1 = re.match(r&#x27;hello&#x27;, &#x27;hello world&#x27;)</span><br><span class="line">    print(bool(m1)) # output:True</span><br><span class="line">    print(m1) # output:&lt;re.Match object; span=(0, 5), match=&#x27;hello&#x27;&gt;</span><br><span class="line"></span><br><span class="line">    m2 = re.match(r&#x27;hello&#x27;, &#x27;say hello world&#x27;)</span><br><span class="line">    print(m1.group() if m2 else &quot;No match&quot;) # output:No match</span><br><span class="line">useMatch()</span><br></pre></td></tr></table></figure><h2 id="re-findAll"><a href="#re-findAll" class="headerlink" title="re.findAll()"></a>re.findAll()</h2><ul><li>finds all occurrences of the pattern in the string</li><li>re.findall(pattern, string)</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def usefindAll():</span><br><span class="line">    f1 = re.findall(r&#x27;\d+&#x27;, &#x27;There are 3 cats, 4 dogs, and 5 birds.&#x27;)</span><br><span class="line">    print(f1) #output:[&#x27;3&#x27;,&#x27;4&#x27;,&#x27;5&#x27;]</span><br><span class="line">usefindAll()</span><br></pre></td></tr></table></figure><h2 id="re-compile"><a href="#re-compile" class="headerlink" title="re.compile()"></a>re.compile()</h2><ul><li>compiles a regex pattern into a regex object which can be reused</li><li>re.compile(pattern)</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def useCompile():</span><br><span class="line">    # valid if phone number only valid format is nnn-nnn-nnnn or (nnn) nnn-nnnn</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure><h1 id="re-search"><a href="#re-search" class="headerlink" title="re.search()"></a>re.search()</h1><ul><li>searches the entire string for the first match</li><li>re.search(pattern, string)</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def useSearch():</span><br><span class="line">    m1 = re.search(r&#x27;world&#x27;, &#x27;hello world, my world&#x27;)</span><br><span class="line">    print(m1.group() if m1 else &#x27;No found&#x27;) # output:world</span><br><span class="line">useSearch()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> program </category>
+          
+          <category> python3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> regex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>How Data Packets Travel Across the Network</title>
       <link href="/2025/04/04/8.packet/"/>
       <url>/2025/04/04/8.packet/</url>
