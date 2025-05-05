@@ -228,13 +228,13 @@
       
         <tags>
             
-            <tag> AWS </tag>
-            
-            <tag> IaC </tag>
-            
             <tag> automation </tag>
             
             <tag> pytest </tag>
+            
+            <tag> AWS </tag>
+            
+            <tag> IaC </tag>
             
         </tags>
       
