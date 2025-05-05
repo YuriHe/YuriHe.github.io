@@ -54,7 +54,7 @@
     
     
     <entry>
-      <title>SQL Operation Summary</title>
+      <title>SQL Summary</title>
       <link href="/2025/04/22/9.sql/"/>
       <url>/2025/04/22/9.sql/</url>
       
@@ -228,13 +228,13 @@
       
         <tags>
             
-            <tag> automation </tag>
-            
-            <tag> pytest </tag>
-            
             <tag> AWS </tag>
             
             <tag> IaC </tag>
+            
+            <tag> automation </tag>
+            
+            <tag> pytest </tag>
             
         </tags>
       
