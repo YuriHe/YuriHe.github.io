@@ -1,0 +1,43 @@
+#page-header .site-page {
+  text-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+a#site-name {
+  color: #e9f0e1 !important;
+  font-size: 30px !important;
+}
+
+#site-info #site-sub-title {
+  overflow: hidden; /* Ensures text doesn't show until animated */
+  border-right: 3px solid; /* Creates the typing cursor */
+  white-space: nowrap; /* Keeps text on one line */
+  margin: 0 auto; /* Centers the text if needed */
+  width: fit-content; /* Contains the text properly */
+  
+  /* Animation properties */
+  animation: 
+    typing 2.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 20% }
+}
+
+/* The cursor blink animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #000; } /* Match your text color */
+}
+
+.article-container p img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px; 
+  border-radius: 10px;
+  object-fit: cover;  /*images without stretch*/
+}
