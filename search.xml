@@ -15,16 +15,12 @@
           
           <category> tool </category>
           
-          <category> ai </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> ai </tag>
-            
-            <tag> tool </tag>
             
             <tag> automation </tag>
             
@@ -46,16 +42,12 @@
           
           <category> tool </category>
           
-          <category> ai </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> ai </tag>
-            
-            <tag> tool </tag>
             
         </tags>
       
@@ -348,7 +340,7 @@
       
         <tags>
             
-            <tag> git, tool </tag>
+            <tag> git </tag>
             
         </tags>
       
