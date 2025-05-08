@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>n8n workflow automation</title>
+      <link href="/2025/05/07/13.n8n/"/>
+      <url>/2025/05/07/13.n8n/</url>
+      
+        <content type="html"><![CDATA[<p>Why I Choose n8n? I’m building an all-in-one automation solution that integrates multiple third-party application into a cohensive system.First, it fetches real-time news and financial data through APIs, then processes this information using AI to analyze my preferences and behavior, delivering personalized recommendations. These insights are automatically organized and inserted into Notion at scheduled time. Finally the system shares key takeaways with my Slack community.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tool </category>
+          
+          <category> ai </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ai </tag>
+            
+            <tag> tool </tag>
+            
+            <tag> automation </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Build AI-Powered App With Flask, React &amp; SQL Via Lovable</title>
       <link href="/2025/05/06/12.lovable/"/>
       <url>/2025/05/06/12.lovable/</url>
@@ -13,6 +44,8 @@
       
       <categories>
           
+          <category> tool </category>
+          
           <category> ai </category>
           
       </categories>
@@ -20,7 +53,9 @@
       
         <tags>
             
-            <tag> ai, tool </tag>
+            <tag> ai </tag>
+            
+            <tag> tool </tag>
             
         </tags>
       
