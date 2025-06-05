@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Understand GPRS Tunneling Protocol (GTPs)"><meta name="keywords" content="network"><meta name="author" content="Yu"><meta name="copyright" content="Yu"><title>Understand GPRS Tunneling Protocol (GTPs) | Yu.IO</title><link rel="shortcut icon" href="/images/pinecone.png"><link rel="stylesheet" href="/css/index.css?version=1.9.1"><link rel="stylesheet" href="/css/custom.css?version=1.9.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.1"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css?version=1.9.1"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  hexoVersion: '7.3.0'
+} </script><meta name="generator" content="Hexo 7.3.0"></head><body><canvas class="fireworks"></canvas><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mobile-Core-Network-Architecture"><span class="toc-number">1.</span> <span class="toc-text">Mobile Core Network Architecture</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2G"><span class="toc-number">1.1.</span> <span class="toc-text">2G</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Core-Network"><span class="toc-number">1.1.1.</span> <span class="toc-text">Core Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-Element"><span class="toc-number">1.1.2.</span> <span class="toc-text">Main Element</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocol"><span class="toc-number">1.1.3.</span> <span class="toc-text">Protocol</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3G"><span class="toc-number">1.2.</span> <span class="toc-text">3G</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Core-Network-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">Core Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-Elements"><span class="toc-number">1.2.2.</span> <span class="toc-text">Main Elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocol-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">Protocol</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4G"><span class="toc-number">1.3.</span> <span class="toc-text">4G</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Core-Network-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">Core Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-Elements-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">Main Elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocol-2"><span class="toc-number">1.3.3.</span> <span class="toc-text">Protocol</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5G-NR-%E2%80%93-New-Radio"><span class="toc-number">1.4.</span> <span class="toc-text">5G (NR – New Radio)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Core-Network-3"><span class="toc-number">1.4.1.</span> <span class="toc-text">Core Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Main-Elements-2"><span class="toc-number">1.4.2.</span> <span class="toc-text">Main Elements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protocol-3"><span class="toc-number">1.4.3.</span> <span class="toc-text">Protocol</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GTP-Sub-protocols"><span class="toc-number">2.</span> <span class="toc-text">GTP Sub-protocols</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GTP-tunnel-setup-in-4G-LTE"><span class="toc-number">3.</span> <span class="toc-text">GTP tunnel setup in 4G (LTE)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Step-UE-attachment-initial-signaling"><span class="toc-number">3.1.</span> <span class="toc-text">1 Step: UE attachment &amp; initial signaling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Step-MME-Sends-Create-Session-Request-to-SGW"><span class="toc-number">3.2.</span> <span class="toc-text">2 Step: MME Sends Create Session Request to SGW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Step-SGW-Forwards-Create-Session-Request-to-PGW"><span class="toc-number">3.3.</span> <span class="toc-text">3 Step: SGW Forwards Create Session Request to PGW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Step-PGW-Sends-Create-Session-Response-to-SGW"><span class="toc-number">3.4.</span> <span class="toc-text">4 Step: PGW Sends Create Session Response to SGW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Step-SGW-Create-Session-Response-to-MME"><span class="toc-number">3.5.</span> <span class="toc-text">5 Step: SGW Create Session Response to MME</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Step-MME-Instructs-eNodeB-to-Setup-Bearer"><span class="toc-number">3.6.</span> <span class="toc-text">6 Step: MME  Instructs eNodeB to Setup Bearer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Step-Bearer-Setup-Complete"><span class="toc-number">3.7.</span> <span class="toc-text">7 Step: Bearer Setup Complete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Step-User-Plane-Starts-GTP-U"><span class="toc-number">3.8.</span> <span class="toc-text">8 Step: User Plane Starts (GTP-U)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Glossary"><span class="toc-number">4.</span> <span class="toc-text">Glossary</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/images/profile.jpeg"></div><div class="author-info__name text-center">Yu</div><div class="author-info__description text-center"></div><div class="follow-button"><a target="_blank" rel="noopener" href="https://github.com/YuriHe">Follow My Github</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">14</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">13</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">8</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/top_img1.jpeg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Yu.IO</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/about">About Me</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> Search</span></a></span></div><div id="post-info"><div id="post-title">Understand GPRS Tunneling Protocol (GTPs)</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2025-06-04</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/network/">network</a><div class="post-meta-wordcount"><span>Word count: </span><span class="word-count">1.1k</span><span class="post-meta__separator">|</span><span>Reading time: 6 min</span></div></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>GPRS Tunneling Protocol (GTP) is a group of IP-based mobile communication protocols defined by 3GPP used across various interfaces in roaming, RAN, and within the packet core of 3G and 4G networks to carry GPRS traffic over GSM (2G), UMTS (3G), LTE (4G), and 5G NR radio networks.</p>
+<span id="more"></span>
+<p>GTP establishes tunnels between GPRS Support Nodes (GSNs) or their LTE&#x2F;5G equivalents (such as the Serving Gateway (SGW) and PDN Gateway (PGW)), enabling encapsulated user data and signaling messages to traverse the mobile core network.</p>
+<h1 id="Mobile-Core-Network-Architecture"><a href="#Mobile-Core-Network-Architecture" class="headerlink" title="Mobile Core Network Architecture"></a>Mobile Core Network Architecture</h1><h2 id="2G"><a href="#2G" class="headerlink" title="2G"></a>2G</h2><h3 id="Core-Network"><a href="#Core-Network" class="headerlink" title="Core Network"></a>Core Network</h3><p>GSM Core + GPRS Core</p>
+<h3 id="Main-Element"><a href="#Main-Element" class="headerlink" title="Main Element"></a>Main Element</h3><p>MSC - handles circuit-switched calls<br>HLR&#x2F;VLR - subscriber and location data<br>SGSN<br>GGSN</p>
+<h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Between</th>
+<th>Purpose</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gn</td>
+<td>SGSN &lt;-&gt; GGSN</td>
+<td>Intra-PLMN</td>
+<td>GTPv1-C (control), GTPv1-U (user)</td>
+</tr>
+<tr>
+<td>Gp</td>
+<td>SGSN &lt;-&gt; GGSN</td>
+<td>Inter-PLMN, roaming</td>
+<td>GTPv1-C (control), GTPv1-U (user)</td>
+</tr>
+</tbody></table>
+<h2 id="3G"><a href="#3G" class="headerlink" title="3G"></a>3G</h2><h3 id="Core-Network-1"><a href="#Core-Network-1" class="headerlink" title="Core Network"></a>Core Network</h3><p>UMTS Core (similar to 2G + improved packet support)</p>
+<h3 id="Main-Elements"><a href="#Main-Elements" class="headerlink" title="Main Elements"></a>Main Elements</h3><p>RNC (Radio Network Controller)<br>SGSN + GGSN - continue from GPRS<br>HLR, MSC</p>
+<h3 id="Protocol-1"><a href="#Protocol-1" class="headerlink" title="Protocol"></a>Protocol</h3><table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Between</th>
+<th>Purpose</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Gn</td>
+<td>SGSN &lt;-&gt; GGSN</td>
+<td>Intra-PLMN</td>
+<td>GTPv1-C (control), GTPv1-U (user)</td>
+</tr>
+<tr>
+<td>Gp</td>
+<td>SGSN &lt;-&gt; GGSN</td>
+<td>Inter-PLMN, roaming</td>
+<td>GTPv1-C (control), GTPv1-U (user)</td>
+</tr>
+<tr>
+<td>Gi</td>
+<td>GGSN &lt;-&gt; Internet</td>
+<td>External packet delivery</td>
+<td>IP (user)</td>
+</tr>
+</tbody></table>
+<h2 id="4G"><a href="#4G" class="headerlink" title="4G"></a>4G</h2><h3 id="Core-Network-2"><a href="#Core-Network-2" class="headerlink" title="Core Network"></a>Core Network</h3><p>EPC, All-IP architecture, no circuit-switching, instead packet switching</p>
+<h3 id="Main-Elements-1"><a href="#Main-Elements-1" class="headerlink" title="Main Elements"></a>Main Elements</h3><p>eNodeB - combines base station &amp; controller<br>MME (Mobility Management Entity) - manage mobility of UE and session control (GTPv2-C)<br>SGW<br>PGW<br>HSS – replace HLR</p>
+<h3 id="Protocol-2"><a href="#Protocol-2" class="headerlink" title="Protocol"></a>Protocol</h3><table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Between</th>
+<th>Purpose</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S1-MME</td>
+<td>eNodeB &lt;-&gt; MME</td>
+<td>Signaling, bearer setup</td>
+<td>Control plane, SCTP, S1AP</td>
+</tr>
+<tr>
+<td>S1-U</td>
+<td>eNodeB &lt;-&gt; SGW</td>
+<td>Carrier user IP packet</td>
+<td>GTPv1-U (user)</td>
+</tr>
+<tr>
+<td>S11</td>
+<td>MME &lt;-&gt; SGW</td>
+<td>Session management</td>
+<td>GTPv2-C (control)</td>
+</tr>
+<tr>
+<td>S5&#x2F;S8</td>
+<td>SGW &lt;-&gt; PGW</td>
+<td>S5 for same PLMN, S8 different PLMN</td>
+<td>GTPv2-C, GTPv1-U</td>
+</tr>
+</tbody></table>
+<h2 id="5G-NR-–-New-Radio"><a href="#5G-NR-–-New-Radio" class="headerlink" title="5G (NR – New Radio)"></a>5G (NR – New Radio)</h2><h3 id="Core-Network-3"><a href="#Core-Network-3" class="headerlink" title="Core Network"></a>Core Network</h3><p>5G core</p>
+<h3 id="Main-Elements-2"><a href="#Main-Elements-2" class="headerlink" title="Main Elements"></a>Main Elements</h3><p>gNB – 5G base station<br>AMF – Access and Mobility Function<br>SMF – Session Management Function<br>UPF – User Plane Function (replace SGW&#x2F;PGW)</p>
+<h3 id="Protocol-3"><a href="#Protocol-3" class="headerlink" title="Protocol"></a>Protocol</h3><table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Between</th>
+<th>Purpose</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>N3</td>
+<td>gNB &lt;-&gt; UPF</td>
+<td>IP data transport</td>
+<td>GTPv1-U (user)</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>SMF &lt;-&gt; UPF</td>
+<td>User plane session management</td>
+<td>PFCP (on UDP&#x2F;IP) (control)</td>
+</tr>
+</tbody></table>
+<h1 id="GTP-Sub-protocols"><a href="#GTP-Sub-protocols" class="headerlink" title="GTP Sub-protocols"></a>GTP Sub-protocols</h1><p>GTP-C (Control Plane) Handles signaling for session management such as creating, modifying, and deleting tunnels. It is used between SGSN and GGSN in 3G networks, and between SGW and PGW in 4G networks to manage sessions. GTPv2-C is used for session management in LTE, while GTPv1-C is used for PDP context request&#x2F;response in 3G. GTP-C packet is sent through the UDP port 2123. There are three available versions: GTPv0, GTPv1-C and GTPv2-C.<br>GTP-U (User Plane) Used between the Radio Access Network (RAN) and the core network to carry user-plane IPv4 or IPv6 data encapsulated in GTP-U tunnels. GTP-U packet is sent through the UDP port 2152. There are one version: GTPv1-U.<br>GTP’ (GTP Prime) Derived from GTP-C, it is used between the Charging Data Function (CDF) and the Charging Gateway Function (CGF) to carry charging information.</p>
+<h1 id="GTP-tunnel-setup-in-4G-LTE"><a href="#GTP-tunnel-setup-in-4G-LTE" class="headerlink" title="GTP tunnel setup in 4G (LTE)"></a>GTP tunnel setup in 4G (LTE)</h1><h2 id="1-Step-UE-attachment-initial-signaling"><a href="#1-Step-UE-attachment-initial-signaling" class="headerlink" title="1 Step: UE attachment &amp; initial signaling"></a>1 Step: UE attachment &amp; initial signaling</h2><ul>
+<li>UE connect eNodeB</li>
+<li>eNodeB sends Attach Request with APN (Access Point Name) to MME via S1-MME (uses S1AP over SCTP)</li>
+</ul>
+<h2 id="2-Step-MME-Sends-Create-Session-Request-to-SGW"><a href="#2-Step-MME-Sends-Create-Session-Request-to-SGW" class="headerlink" title="2 Step: MME Sends Create Session Request to SGW"></a>2 Step: MME Sends <code>Create Session Request</code> to SGW</h2><ul>
+<li>MME initiate EPS (Evolved Packet System) session creation</li>
+<li>S11 interface used in MME -&gt; SGW for control signaling</li>
+<li>Send GTPv2-C message to SGW</li>
+<li>Message includes: UE IP, APN, IMSI, bearer QoS</li>
+<li>TEID (0x00000000 when not assigned) </li>
+<li>PGW address for forwarding</li>
+</ul>
+<h2 id="3-Step-SGW-Forwards-Create-Session-Request-to-PGW"><a href="#3-Step-SGW-Forwards-Create-Session-Request-to-PGW" class="headerlink" title="3 Step: SGW Forwards Create Session Request to PGW"></a>3 Step: SGW Forwards <code>Create Session Request</code> to PGW</h2><ul>
+<li>SGW acts as a proxy, forwarding request to PGW</li>
+<li>GTPv2-C over S5&#x2F;S8 interface</li>
+</ul>
+<h2 id="4-Step-PGW-Sends-Create-Session-Response-to-SGW"><a href="#4-Step-PGW-Sends-Create-Session-Response-to-SGW" class="headerlink" title="4 Step: PGW Sends Create Session Response to SGW"></a>4 Step: PGW Sends <code>Create Session Response</code> to SGW</h2><ul>
+<li>PGW allocates: UE IP address, TEID for signaling (TEID-C), TEID for data (TEID-U)</li>
+<li>Sends GTPv2-C Create Session Response back to SGW</li>
+<li>This response also includes: EPS bearer ID, QoS rules</li>
+</ul>
+<h2 id="5-Step-SGW-Create-Session-Response-to-MME"><a href="#5-Step-SGW-Create-Session-Response-to-MME" class="headerlink" title="5 Step: SGW Create Session Response to MME"></a>5 Step: SGW <code>Create Session Response</code> to MME</h2><ul>
+<li>SGW maps its own TEIDs (for user and control planes)</li>
+<li>Sends Create Session Response (GTPv2-C) to MME</li>
+</ul>
+<h2 id="6-Step-MME-Instructs-eNodeB-to-Setup-Bearer"><a href="#6-Step-MME-Instructs-eNodeB-to-Setup-Bearer" class="headerlink" title="6 Step: MME  Instructs eNodeB to Setup Bearer"></a>6 Step: MME  Instructs eNodeB to Setup Bearer</h2><ul>
+<li>MME sends Initial Context Setup Request to eNodeB</li>
+<li>Includes eNodeB’s TEID and UE’s IP</li>
+</ul>
+<h2 id="7-Step-Bearer-Setup-Complete"><a href="#7-Step-Bearer-Setup-Complete" class="headerlink" title="7 Step: Bearer Setup Complete"></a>7 Step: Bearer Setup Complete</h2><ul>
+<li>eNodeB responds back confirming bearer setup</li>
+<li>TEIDs are now established at all hops: S1-U (eNodeB ↔ SGW); S5&#x2F;S8 (SGW ↔ PGW)</li>
+</ul>
+<h2 id="8-Step-User-Plane-Starts-GTP-U"><a href="#8-Step-User-Plane-Starts-GTP-U" class="headerlink" title="8 Step: User Plane Starts (GTP-U)"></a>8 Step: User Plane Starts (GTP-U)</h2><ul>
+<li>User data flows using: GTPv1-U on: S1-U (eNodeB ↔ SGW); S5&#x2F;S8 (SGW ↔ PGW)</li>
+<li>Packets encapsulated in GTP-U (type: 0xFF) using assigned TEIDs</li>
+</ul>
+<h1 id="Glossary"><a href="#Glossary" class="headerlink" title="Glossary"></a>Glossary</h1><p>BSS (Base Station Subsystem): Consists of the Base Transceiver Station (BTS) and the Base Station Controller (BSC). Used in GSM networks for managing radio communication and control.</p>
+<p>eNB (evolved Node B): The LTE base station that connects UE to EPC. It handles radio communication and control functions.</p>
+<p>EPC (Evolved Packet Core): The core network in 4G LTE, responsible for data routing, mobility management, and connectivity to external networks.</p>
+<p>GGSN (Gateway GPRS Support Node): connects to external packet networks.</p>
+<p>GSM (Global System for Mobile Communications): A 2G cellular technology that provides mobile voice and data services. Key components include MS, BSS, and NSS.</p>
+<p>IMSI (International Mobile Subscriber Identity): unique number to identify mobile subscriber on GSM, UMTS, or LTE network.</p>
+<p>MS (Mobile Station): Consists of the mobile device and the SIM card, used by the subscriber to access the mobile network.</p>
+<p>NSS (Network and Switching Subsystem): Includes core components like the Mobile Switching Center (MSC) and databases such as the Home Location Register (HLR) and Visitor Location Register (VLR).</p>
+<p>PFCP (Packet Forwarding Control Protocol): Works between control plane and user plane in 5G. It operates on top of UDP&#x2F;IP, with port 8805, and is crucial for establishing, modifying, and releasing sessions, as well as reporting session information. PFCP is used by the Session Management Function (SMF) to communicate with the User Plane Function (UPF). </p>
+<p>PGW (Packet Data Network Gateway): Serves as the interface between the EPC and external IP networks. It handles IP address allocation, QoS, and packet filtering.</p>
+<p>PLMN (Public Land Mobile Network): public cellular network within specific country (PLMN ID).</p>
+<p>RAN (Radio Access Network): Part of the mobile network that uses radio waves to connect UEs to the core network. Includes transceivers like eNB.</p>
+<p>SGW (Serving Gateway): Routes and forwards user data packets from UEs to the PGW, and acts as a mobility anchor during handovers between eNBs.</p>
+<p>SGSN (Serving GPRS Support Node): packet-switched services.</p>
+<p>UMTS (Universal Mobile Telecommunications System): A 3G mobile communication technology. It uses WCDMA as the radio access technology to transmit data over the air interface.</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Yu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://yurihe.github.io/2025/06/04/14.gtf/">https://yurihe.github.io/2025/06/04/14.gtf/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/network/">network</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2025/05/07/13.n8n/"><span>Tines | build APIs integration workflow</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'Ov23li4yM2PWWAhvWfYQ',
+  clientSecret: 'e5e93a1985d429b0e56cbf661ac7e987d4c71394',
+  repo: 'YuriHe.github.io',
+  owner: 'YuriHe',
+  admin: 'YuriHe',
+  id: md5(decodeURI(location.pathname)),
+  language: 'en'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/images/top_img1.jpeg)"><div class="layout" id="footer"><div class="copyright">&copy;2025 By Yu</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/lib/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.1"></script><script src="/js/fancybox.js?version=1.9.1"></script><script src="/js/sidebar.js?version=1.9.1"></script><script src="/js/copy.js?version=1.9.1"></script><script src="/js/fireworks.js?version=1.9.1"></script><script src="/js/transition.js?version=1.9.1"></script><script src="/js/scroll.js?version=1.9.1"></script><script src="/js/head.js?version=1.9.1"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">Local search</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>Powered by</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
